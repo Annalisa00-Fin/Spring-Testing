@@ -29,6 +29,20 @@
 	<properties>
 		<java.version>21</java.version>
 	</properties>
+
+	<repositories>
+			<repository>
+				<id>notification</id>
+				<url>https://maven.pkg.github.com/Peppelmn/notification-service</url>
+			</repository>
+
+		<repository>
+			<id>order</id>
+			<url>https://maven.pkg.github.com/peppo-b/order-service</url>
+		</repository>
+
+	</repositories>
+
 	<dependencies>
 
 		<dependency>
@@ -59,6 +73,19 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>it.fincons</groupId>
+			<artifactId>notification-service</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>it.fincons</groupId>
+			<artifactId>order-service</artifactId>
+			<version>1.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

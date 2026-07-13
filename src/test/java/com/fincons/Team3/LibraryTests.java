@@ -8,6 +8,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
@@ -46,8 +47,8 @@ public class LibraryTests {
         assertEquals(2, orders.size());
 
         //controls if the orders are matching its positions
-        assertEquals(order, orders.get(0));
-        assertEquals(secondOrder, orders.get(1));
+        assertEquals(order1, orders.get(0));
+        assertEquals(order2, orders.get(1));
 
         //controls if two notifications are sent
         verify(notificationService, times(2)).send("Order was created");

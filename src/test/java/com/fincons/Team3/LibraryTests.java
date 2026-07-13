@@ -1,7 +1,6 @@
 package com.fincons.Team3;
 
 import it.fincons.notification_service.JavaEmailNotificationService;
-import it.fincons.notification_service.NotificationService;
 import it.fincons.order_service.model.Order;
 import it.fincons.order_service.service.OrderService;
 import org.junit.jupiter.api.Test;
@@ -13,6 +12,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -55,6 +55,15 @@ public class LibraryTests {
 
         //controls if two notifications are sent
         verify(notificationService, times(2)).send("Ordine creato");
+    }
+
+    @Test
+    public void findOrderTest(){
+        Order order1 = new Order(1L, "iphone", 4);
+
+        orderService.createOrder(order1);
+
+        assertNotNull(orderService.findOrder(order1.getId()));
     }
 
 }
